@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name                  = 'digipolitan-app-swift-template-cli'
-  s.version               = '0.1.0'
-  s.date                  = '2017-10-02'
+  s.version               = '0.2.0'
+  s.date                  = '2019-01-15'
   s.summary               = 'Digipolitan Ruby tools to use swift app template'
   s.homepage              = 'https://github.com/Digipolitan/app-swift-template-cli'
   s.email                 = 'contact@digipolitan.com'

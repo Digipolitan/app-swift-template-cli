@@ -6,6 +6,11 @@ module Digipolitan
 
   class AppSwiftTemplate
 
+    @@sources = {
+      "iOS" => "https://github.com/Digipolitan/app-swift-template/archive/master.zip",
+      "tvOS" => "https://github.com/Digipolitan/app-swift-template-tvos/archive/master.zip"
+    }
+
     def self.init(target_path = nil)
 
       zip_path = ".template.zip"
@@ -26,8 +31,10 @@ module Digipolitan
           Digipolitan::UI.crash "The target directory contains an xcodeproj, please select another one or clear the directory."
         end
 
+        platform = Digipolitan::UI.select("Choose your platform", @@sources.keys)
+
         Digipolitan::UI.message "Downloading Digipolitan app...";
-        buffer = open('https://github.com/Digipolitan/app-swift-template/archive/master.zip').read
+        buffer = open(@@sources[platform]).read
         Digipolitan::FileUtils.write_to_file(zip_path, buffer)
         Digipolitan::UI.message "Unziping Digipolitan app...";
 
